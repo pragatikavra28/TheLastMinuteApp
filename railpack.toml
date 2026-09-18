@@ -1,0 +1,8 @@
+[phases.install]
+cmds = ["cd frontend/web && npm install"]
+
+[phases.build]
+cmds = ["cd frontend/web && npm run build"]
+
+[start]
+cmd = "npx serve -s frontend/web/dist -l ${PORT:-3000}"
