@@ -1,10 +1,10 @@
 import axios from "axios";
 
 const API_URLS = {
-  auth: "http://localhost:4001",
-  listing: "http://localhost:4002",
-  booking: "http://localhost:4003",
-  payment: "http://localhost:4004"
+  auth: import.meta.env.VITE_AUTH_SERVICE_URL || "http://localhost:4001",
+  listing: import.meta.env.VITE_LISTING_SERVICE_URL || "http://localhost:4002",
+  booking: import.meta.env.VITE_BOOKING_SERVICE_URL || "http://localhost:4003",
+  payment: import.meta.env.VITE_PAYMENT_SERVICE_URL || "http://localhost:4004"
 };
 
 export const authClient = axios.create({
