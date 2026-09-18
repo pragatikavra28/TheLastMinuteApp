@@ -1,0 +1,101 @@
+# =========================
+# ROOT .gitignore
+# RageBooking Monorepo
+# =========================
+
+# -------------------------
+# Node Modules
+# -------------------------
+node_modules/
+**/node_modules/
+
+# -------------------------
+# Logs
+# -------------------------
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# -------------------------
+# Environment Files
+# -------------------------
+.env
+.env.*
+!.env.example
+
+# -------------------------
+# Build / Dist
+# -------------------------
+dist/
+build/
+.next/
+out/
+coverage/
+
+# -------------------------
+# Cache / Temp
+# -------------------------
+.cache/
+.tmp/
+temp/
+tmp/
+
+# -------------------------
+# OS Files
+# -------------------------
+.DS_Store
+Thumbs.db
+
+# -------------------------
+# IDE / Editor
+# -------------------------
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# -------------------------
+# Docker
+# -------------------------
+docker-data/
+postgres_data/
+redis_data/
+
+# -------------------------
+# Database Dumps / Secrets
+# -------------------------
+*.sql.gz
+*.dump
+*.bak
+*.pem
+*.key
+
+# -------------------------
+# Frontend Specific
+# -------------------------
+frontend/.vercel
+frontend/.env.local
+frontend/.env.production.local
+frontend/.env.development.local
+
+# -------------------------
+# Service Specific
+# -------------------------
+services/**/.env
+services/**/dist
+services/**/build
+
+# -------------------------
+# Test Outputs
+# -------------------------
+coverage/
+reports/
+
+# -------------------------
+# Misc
+# -------------------------
+*.pid
+*.seed

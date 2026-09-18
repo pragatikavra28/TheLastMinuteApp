@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-primary: 147 51 234;
+    --color-primary-dark: 126 34 206;
+    --color-secondary: 236 72 153;
+    --color-secondary-dark: 219 39 119;
+    --color-accent: 168 85 247;
+    --color-background: 249 250 251;
+    --color-surface: 255 255 255;
+  }
+  
+  body {
+    @apply bg-gradient-to-br from-purple-50 via-pink-50 to-purple-50;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+  
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-purple-100 rounded-full;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gradient-to-br from-purple-500 to-pink-500 rounded-full;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    @apply from-purple-600 to-pink-600;
+  }
+  
+  /* Selection color */
+  ::selection {
+    @apply bg-purple-500 text-white;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold rounded-xl hover:from-purple-700 hover:to-pink-700 transform hover:-translate-y-0.5 transition-all duration-200 shadow-lg hover:shadow-xl;
+  }
+  
+  .btn-secondary {
+    @apply px-6 py-3 bg-white text-purple-600 font-semibold rounded-xl border-2 border-purple-200 hover:border-purple-400 hover:bg-purple-50 transform hover:-translate-y-0.5 transition-all duration-200;
+  }
+  
+  .btn-outline {
+    @apply px-6 py-3 bg-transparent text-purple-600 font-semibold rounded-xl border-2 border-purple-300 hover:bg-purple-50 hover:border-purple-500 transition-all duration-200;
+  }
+  
+  .card {
+    @apply bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-purple-100;
+  }
+  
+  .input-field {
+    @apply w-full px-4 py-3 border-2 border-purple-100 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-all duration-200 bg-white/50;
+  }
+  
+  .badge {
+    @apply px-3 py-1 rounded-full text-xs font-medium;
+  }
+  
+  .badge-purple {
+    @apply bg-purple-100 text-purple-700;
+  }
+  
+  .badge-pink {
+    @apply bg-pink-100 text-pink-700;
+  }
+  
+  .gradient-text {
+    @apply bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent;
+  }
+  
+  .gradient-bg {
+    @apply bg-gradient-to-r from-purple-600 to-pink-600;
+  }
+}
