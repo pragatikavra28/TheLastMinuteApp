@@ -9,31 +9,31 @@ const API_URLS = {
 
 export const authClient = axios.create({
   baseURL: API_URLS.auth,
-  timeout: 10000,
+  timeout: 60000,
   headers: { 'Content-Type': 'application/json' }
 });
 
 export const listingClient = axios.create({
   baseURL: `${API_URLS.listing}/api/listings`,
-  timeout: 10000,
+  timeout: 60000,
   headers: { 'Content-Type': 'application/json' }
 });
 
 export const bookingClient = axios.create({
   baseURL: API_URLS.booking,
-  timeout: 10000,
+  timeout: 60000,
   headers: { 'Content-Type': 'application/json' }
 });
 
 export const verificationClient = axios.create({
   baseURL: `${API_URLS.booking}/api/verification`,
-  timeout: 30000,
+  timeout: 60000,
   headers: { 'Content-Type': 'multipart/form-data' }
 });
 
 export const paymentClient = axios.create({
   baseURL: `${API_URLS.payment}/api/payments`,
-  timeout: 30000,
+  timeout: 60000,
   headers: { 'Content-Type': 'application/json' }
 });
 
