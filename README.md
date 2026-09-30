@@ -5,6 +5,24 @@ Designed like a real startup system with separate backend services, secure authe
 
 ---
 
+# 🌍 Live Demo
+
+**App:** [https://lastminute-app-frontend.onrender.com](https://lastminute-app-frontend.onrender.com)
+
+> ⚠️ Hosted on Render's free tier — services spin down after ~15 minutes of inactivity.
+> The **first** request after a period of inactivity can take 30–60 seconds while the service wakes up. Subsequent requests are fast.
+
+| Service          | Live URL                                                                |
+| ---------------- | ------------------------------------------------------------------------ |
+| Frontend          | https://lastminute-app-frontend.onrender.com                            |
+| Auth Service      | https://auth-service-cv37.onrender.com/health                           |
+| Listing Service   | https://listing-service-pqb0.onrender.com/health                        |
+| Booking Service   | https://booking-service-df8a.onrender.com/health                        |
+| Payment Service   | https://payment-service-qvb5.onrender.com/health                        |
+| Database          | Postgres, hosted on [Neon](https://neon.tech)                            |
+
+---
+
 # 📌 Project Overview
 
 Last Minute allows users to:
@@ -174,44 +192,53 @@ docker compose up --build
 ## Auth Service
 
 ```http id="p6xj7s"
-POST /api/auth/register
-POST /api/auth/login
+POST /auth/register
+POST /auth/login
+GET  /auth/me
 ```
 
 ## Listings
 
 ```http id="w5t3kc"
-POST /api/listings
-GET /api/listings
-PATCH /api/listings/:id/availability
+POST   /api/listings
+GET    /api/listings/search
+GET    /api/listings/:id
+GET    /api/listings/my/listings
 ```
 
 ## Bookings
 
 ```http id="n2v8hr"
-POST /api/bookings
-PATCH /api/bookings/:id/cancel
-GET /api/bookings/me
+POST  /bookings
+GET   /bookings/my-bookings
+PATCH /bookings/:id/cancel
 ```
 
 ## Payments
 
 ```http id="q1z4um"
 POST /api/payments/create
-POST /api/payments/verify
 ```
 
 ---
 
-# 🚀 Deployment Ready
+# 🚀 Deployment
 
-This project can be deployed on:
+Currently live on:
+
+* **Frontend** → Render (Static Site)
+* **Backend (4 services)** → Render (Docker Web Services)
+* **Database** → Neon (managed Postgres)
+
+See the [Live Demo](#-live-demo) section above for links.
+
+This project can also be deployed on:
 
 * Vercel (Frontend)
 * AWS
-* Render
 * Railway
 * Docker VPS
+
 
 ---
 
